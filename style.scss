@@ -1,0 +1,127 @@
+@charset "UTF-8";
+body {
+  background: #222;
+  color: #aaa;
+}
+
+.container {
+  position: relative;
+  display: block;
+  width: 800px;
+  background-color: #fff;
+  color: #000;
+  padding: 60px;
+
+  margin-top: 32px;
+}
+
+.flight-details {
+  margin-bottom: 160px;
+  > .single-flight {
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    > .component-content:before {
+      display: none;
+      content: "potato";
+    }
+  }
+  .single-flight {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      left: -34px;
+      top: 0;
+      background-color: #1882ff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 32px;
+      left: -34px;
+      top: -17px;
+      background-color: #1882ff;
+    }
+    &:last-child {
+      &:after {
+        height: 32px;
+        top: -16px;
+      }
+    }
+
+    .component-content {
+      padding: 34px 0 34px 34px;
+
+      padding: 20px !important;
+      border: 1px solid #1882ff;
+      border-radius: 8px;
+      margin: 16px 0;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 34px;
+        height: 1px;
+        left: -35px;
+        top: calc(14% + 0px);
+        border-top: 1px solid #1882ff;
+      }
+      &::after {
+        // content: "";
+        // position: absolute;
+        // width: 1px;
+        // height: 4px;
+        // left: -34px;
+        // top: -20%;
+        // background-color: #1882ff;
+      }
+    }
+
+    .modificationHistories {
+      padding-left: 34px;
+      margin-left: 34px;
+      // border-left: 1px solid #1882ff;
+      position: relative;
+      // &:before {
+      //   content: "";
+      //   position: absolute;
+      //   width: 1px;
+      //   height: 34px;
+      //   left: -1px;
+      //   top: -17px;
+      //   background-color: #1882ff;
+      // }
+
+      .single-flight:last-child {
+        .component-content {
+          // background-color: red;
+          &:before {
+            // content: "";
+            // position: absolute;
+            // width: 1px;
+            // height: 80%;
+            // left: -35px;
+            // top: calc(20% + 1px);
+            // background-color: #fff;
+          }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          width: 1px;
+          height: 80%;
+          left: -35px;
+          top: 20%;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
